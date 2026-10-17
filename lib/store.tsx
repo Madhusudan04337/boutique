@@ -485,7 +485,10 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
         bustOrChest: '96 cm / 37.8 in',
         waist: '80 cm / 31.5 in',
         hips: '94 cm / 37.0 in',
-        preferredLength: 'Standard Floor Drape (102 cm)'
+        sleeve: '62 cm / 24.4 in',
+        inseam: '78 cm / 30.7 in',
+        preferredLength: 'Standard Floor Drape (102 cm)',
+        fitPreference: 'Natural Relaxed'
       },
       orders: [
         {

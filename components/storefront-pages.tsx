@@ -31,7 +31,7 @@ import {
   CreditCard,
   CheckCircle2
 } from 'lucide-react'
-import { useStore, formatMoney, Product, Review } from '@/lib/store'
+import { useStore, formatMoney, Product, Review, GarmentMeasurements } from '@/lib/store'
 import { ProductCard } from '@/components/product-card'
 import { PackagingModal } from '@/components/packaging-modal'
 import { SizingGuideModal } from '@/components/sizing-guide-modal'
@@ -472,12 +472,17 @@ function ProductPageInner({ slug }: { slug?: string }) {
   const measurementMetrics = useMemo(() => {
     if (!activeMeasurements) return []
 
+    const hasMeasurement = (
+      metric: { label: string; val: GarmentMeasurements[keyof GarmentMeasurements] | undefined },
+    ): metric is { label: string; val: { cm: number; in: number } } =>
+      Boolean(metric.val && metric.val.cm > 0)
+
     if (isBottom) {
       return [
         { label: 'WAIST', val: activeMeasurements.waist },
         { label: 'HIP', val: activeMeasurements.hip },
         { label: 'LENGTH', val: activeMeasurements.length }
-      ].filter(m => m.val && m.val.cm > 0)
+      ].filter(hasMeasurement)
     }
 
     if (isDress) {
@@ -485,7 +490,7 @@ function ProductPageInner({ slug }: { slug?: string }) {
         { label: 'BUST', val: activeMeasurements.chest },
         { label: 'WAIST', val: activeMeasurements.waist },
         { label: 'LENGTH', val: activeMeasurements.length }
-      ].filter(m => m.val && m.val.cm > 0)
+      ].filter(hasMeasurement)
     }
 
     if (isTopOrShirt) {
@@ -493,7 +498,7 @@ function ProductPageInner({ slug }: { slug?: string }) {
         { label: 'CHEST', val: activeMeasurements.chest },
         { label: 'SHOULDER', val: activeMeasurements.shoulder },
         { label: 'LENGTH', val: activeMeasurements.length }
-      ].filter(m => m.val && m.val.cm > 0)
+      ].filter(hasMeasurement)
     }
 
     return [
@@ -501,7 +506,7 @@ function ProductPageInner({ slug }: { slug?: string }) {
       { label: 'SHOULDER', val: activeMeasurements.shoulder },
       { label: 'LENGTH', val: activeMeasurements.length },
       { label: 'SLEEVE', val: activeMeasurements.sleeve }
-    ].filter(m => m.val && m.val.cm > 0)
+    ].filter(hasMeasurement)
   }, [activeMeasurements, isBottom, isDress, isTopOrShirt])
 
   return (
