@@ -611,36 +611,72 @@ export default function AccountPage() {
               <button
                 type="button"
                 onClick={() => setIsSalonModalOpen(true)}
-                className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl bg-[#c9b293] hover:bg-[#dfcaa8] text-[#181716] text-[10px] sm:text-xs font-sans font-medium cursor-pointer self-start sm:self-auto"
+                className="px-3.5 sm:px-4 py-2 rounded-xl bg-[#c9b293] hover:bg-[#dfcaa8] text-[#181716] text-xs font-sans font-medium cursor-pointer self-start sm:self-auto flex items-center gap-1.5 transition-colors"
               >
-                Book a Fitting
+                <Calendar className="w-3.5 h-3.5" />
+                <span>Book a Fitting</span>
               </button>
             </div>
 
-            {/* Current Appointment Card */}
-            <div className="p-4 rounded-xl bg-[#1c1b18] border border-[#302e29] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-              <div className="space-y-1">
-                <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400" />
-                  <span className="text-xs font-mono font-medium text-emerald-400">Confirmed Booking</span>
-                </div>
-                <h4 className="text-sm font-serif text-[#f4efe9]">Private Atelier Consultation</h4>
-                <p className="text-xs font-sans text-[#a7a297]">
-                  14/2 Khader Nawaz Khan Road, Nungambakkam, Chennai 600006
-                </p>
-                <p className="text-xs font-mono text-[#c9b293] pt-1">
-                  Date: 15 Oct 2026 · Time: 11:00 AM
-                </p>
+            {salonBookings && salonBookings.length > 0 ? (
+              <div className="space-y-3">
+                {salonBookings.map((b, idx) => (
+                  <div
+                    key={b.id || idx}
+                    className="p-4 rounded-xl bg-[#1c1b18] border border-[#302e29] flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+                  >
+                    <div className="space-y-1">
+                      <div className="flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-emerald-400" />
+                        <span className="text-xs font-mono font-medium text-emerald-400">
+                          {b.status || 'Confirmed Booking'}
+                        </span>
+                        {b.referenceCode && (
+                          <span className="text-[10px] font-mono text-[#8a857d] bg-[#262420] px-2 py-0.5 rounded border border-[#35332e]">
+                            {b.referenceCode}
+                          </span>
+                        )}
+                      </div>
+                      <h4 className="text-sm font-serif text-[#f4efe9]">
+                        {b.category || 'Private Atelier Consultation'}
+                      </h4>
+                      <p className="text-xs font-sans text-[#a7a297]">
+                        14/2 Khader Nawaz Khan Road, Nungambakkam, Chennai 600006
+                      </p>
+                      <p className="text-xs font-mono text-[#c9b293] pt-0.5">
+                        Date: {b.date} · Time: {b.time}
+                      </p>
+                      {b.notes && (
+                        <p className="text-[11px] font-sans text-[#8a857d] italic pt-0.5">
+                          Tailor note: &ldquo;{b.notes}&rdquo;
+                        </p>
+                      )}
+                    </div>
+
+                    <div className="flex items-center gap-3 self-start sm:self-auto">
+                      <button
+                        type="button"
+                        onClick={() => setIsSalonModalOpen(true)}
+                        className="text-xs font-sans text-[#a7a297] hover:text-[#c9b293] underline cursor-pointer"
+                      >
+                        Reschedule / Modify
+                      </button>
+                    </div>
+                  </div>
+                ))}
               </div>
-
-              <button
-                type="button"
-                onClick={() => setIsSalonModalOpen(true)}
-                className="text-xs font-sans text-[#a7a297] hover:text-[#c9b293] underline cursor-pointer self-start sm:self-auto"
-              >
-                Reschedule
-              </button>
-            </div>
+            ) : (
+              <div className="p-8 text-center border border-dashed border-[#35332e] rounded-xl space-y-3">
+                <p className="text-sm font-sans text-[#a7a297]">No salon appointments currently scheduled.</p>
+                <button
+                  type="button"
+                  onClick={() => setIsSalonModalOpen(true)}
+                  className="px-4 py-2 rounded-xl bg-[#c9b293] hover:bg-[#dfcaa8] text-[#181716] text-xs font-sans font-medium cursor-pointer"
+                >
+                  Book Private Fitting
+                </button>
+              </div>
+            )}
           </section>
         )}
 

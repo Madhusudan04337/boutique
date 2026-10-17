@@ -2,11 +2,11 @@
 
 import React, { useState } from 'react'
 import Link from 'next/link'
-import { Check, Mail, Phone, MapPin, Sparkles, ArrowRight, Send } from 'lucide-react'
+import { Check, Mail, Phone, MapPin, Sparkles, ArrowRight, Send, Calendar } from 'lucide-react'
 import { useStore } from '@/lib/store'
 
 export function ContactPage() {
-  const { showToast } = useStore()
+  const { showToast, setIsSalonModalOpen } = useStore()
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
@@ -138,7 +138,7 @@ export function ContactPage() {
                 <p className="text-xs text-[#8a857d]">Master Stylist available 10am–7pm IST</p>
               </div>
 
-              <div className="p-5 bg-[#201f1c] border border-[#33312c] rounded-2xl space-y-1.5">
+              <div className="p-5 bg-[#201f1c] border border-[#33312c] rounded-2xl space-y-3">
                 <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#c9b293]">
                   <MapPin className="w-3.5 h-3.5" />
                   <span>Chennai Salon Location</span>
@@ -146,6 +146,17 @@ export function ContactPage() {
                 <p className="text-white text-sm">Khader Nawaz Khan Road, Nungambakkam</p>
                 <p className="text-xs text-[#8a857d]">Chennai, Tamil Nadu 600006</p>
                 <p className="font-mono text-xs text-[#c9b293] pt-1">Mon–Sat / 10:00 AM – 7:00 PM</p>
+
+                <div className="pt-2 border-t border-[#2e2c28]">
+                  <button
+                    type="button"
+                    onClick={() => setIsSalonModalOpen(true)}
+                    className="w-full py-2.5 px-3 bg-[#c9b293] hover:bg-[#dfcaa8] text-[#181716] font-mono text-xs uppercase tracking-wider font-semibold rounded-xl flex items-center justify-center gap-2 transition-colors cursor-pointer shadow-sm"
+                  >
+                    <Calendar className="w-3.5 h-3.5" />
+                    <span>Book Salon Fitting Appointment</span>
+                  </button>
+                </div>
               </div>
             </div>
 

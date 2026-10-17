@@ -80,6 +80,7 @@ export interface StyledLook {
 }
 
 export interface SalonBooking {
+  id?: string
   name: string
   email: string
   phone: string
@@ -87,6 +88,9 @@ export interface SalonBooking {
   time: string
   category: string
   notes?: string
+  referenceCode?: string
+  status?: 'Confirmed Booking' | 'Completed' | 'Rescheduled'
+  createdAt?: string
 }
 
 export interface UserOrderItem {
@@ -365,7 +369,20 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
   const [giftPackaging, setGiftPackaging] = useState(true)
   const [toastMessage, setToastMessage] = useState<string | null>(null)
   const [appliedCoupon, setAppliedCoupon] = useState<string | null>(null)
-  const [salonBookings, setSalonBookings] = useState<SalonBooking[]>([])
+  const [salonBookings, setSalonBookings] = useState<SalonBooking[]>([
+    {
+      id: 'bk_aurora_default_01',
+      name: 'Default User',
+      email: 'test@aurora.com',
+      phone: '+91 98401 00000',
+      date: '2026-10-24',
+      time: '11:00 AM',
+      category: 'Bespoke Tailoring',
+      referenceCode: 'AUR-SLN-4821',
+      status: 'Confirmed Booking',
+      notes: 'Initial silhouette draping & Belgian flax linen fitting.'
+    }
+  ])
   const [user, setUser] = useState<User | null>(null)
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false)
   const [authModalMode, setAuthModalMode] = useState<'signin' | 'register'>('signin')
@@ -388,8 +405,19 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
       if (savedUser) {
         setUser(JSON.parse(savedUser))
       }
+
+      const savedBookings = localStorage.getItem('aurora_salon_bookings')
+      if (savedBookings) {
+        setSalonBookings(JSON.parse(savedBookings))
+      }
     } catch {}
   }, [])
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('aurora_salon_bookings', JSON.stringify(salonBookings))
+    } catch {}
+  }, [salonBookings])
 
   useEffect(() => {
     try {
@@ -641,9 +669,15 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
   }
 
   const bookSalonAppointment = (booking: SalonBooking) => {
-    setSalonBookings(prev => [booking, ...prev])
+    const newBooking: SalonBooking = {
+      ...booking,
+      id: booking.id || `bk_${Date.now()}`,
+      referenceCode: booking.referenceCode || `AUR-SLN-${Math.floor(1000 + Math.random() * 9000)}`,
+      status: 'Confirmed Booking',
+      createdAt: new Date().toISOString()
+    }
+    setSalonBookings(prev => [newBooking, ...prev])
     showToast(`Fitting reserved for ${booking.name}`)
-    setIsSalonModalOpen(false)
   }
 
   return (

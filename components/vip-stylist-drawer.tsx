@@ -3,11 +3,11 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'motion/react'
-import { X, MessageSquare, Sparkles, Send, ShieldCheck, Check } from 'lucide-react'
+import { X, MessageSquare, Sparkles, Send, ShieldCheck, Check, Calendar } from 'lucide-react'
 import { useStore } from '@/lib/store'
 
 export function VipStylistDrawer() {
-  const { isStylistDrawerOpen, setIsStylistDrawerOpen, showToast } = useStore()
+  const { isStylistDrawerOpen, setIsStylistDrawerOpen, setIsSalonModalOpen, showToast } = useStore()
   const [clientName, setClientName] = useState('')
   const [clientPhone, setClientPhone] = useState('')
   const [occasion, setOccasion] = useState('Occasion Styling')
@@ -121,12 +121,24 @@ export function VipStylistDrawer() {
                     <p className="text-[10px] font-mono text-center text-[#7e7a72] mt-2">
                       Instant sizing recommendations &amp; private garment reservations.
                     </p>
+
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setIsStylistDrawerOpen(false)
+                        setIsSalonModalOpen(true)
+                      }}
+                      className="w-full mt-3 py-2.5 px-3 bg-[#262420] hover:bg-[#302e2a] border border-[#3b3832] hover:border-[#c9b293] text-[#c9b293] font-mono text-xs uppercase tracking-wider rounded-xl flex items-center justify-center gap-2 transition-colors cursor-pointer"
+                    >
+                      <Calendar className="w-3.5 h-3.5" />
+                      <span>Book In-Person Salon Fitting</span>
+                    </button>
                   </div>
 
                   <div className="relative flex py-1 items-center">
                     <div className="flex-grow border-t border-[#302e2a]"></div>
                     <span className="flex-shrink mx-3 text-[10px] font-mono uppercase text-[#736f67]">
-                      Or request a stylist call
+                      Or request a stylist callback
                     </span>
                     <div className="flex-grow border-t border-[#302e2a]"></div>
                   </div>
