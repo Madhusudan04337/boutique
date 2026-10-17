@@ -18,28 +18,28 @@ import { HorizontalGallery } from '@/components/storytelling/horizontal-gallery'
 const pillars = [
   {
     name: 'Tailoring',
-    image: '/images/real-blazer.jpg',
+    image: 'https://picsum.photos/seed/tailor1/800/1000',
     href: '/collection?category=Tailoring',
     count: 'Blazers & Coats',
     accent: 'Hand-basted canvas'
   },
   {
     name: 'Silk Dresses',
-    image: '/images/real-dress.jpg',
+    image: 'https://picsum.photos/seed/silk2/800/1000',
     href: '/collection?category=Silk%20Dresses',
     count: 'Bias-Cut Slips',
     accent: '45° True bias contour'
   },
   {
     name: 'Tops & Shirts',
-    image: '/images/real-shirt.jpg',
+    image: 'https://picsum.photos/seed/shirt3/800/1000',
     href: '/collection?category=Tops%20%26%20Shirts',
     count: 'Poplin & Raw Silk',
     accent: 'Mother-of-pearl buttons'
   },
   {
     name: 'Bottoms',
-    image: '/images/real-trouser.jpg',
+    image: 'https://picsum.photos/seed/trouser4/800/1000',
     href: '/collection?category=Bottoms',
     count: 'Pleated Trousers',
     accent: 'Fluid high-rise drape'
@@ -239,9 +239,14 @@ export default function HomePage() {
             {/* Salon Fitting Sculpted Portal */}
             <OrganicCard contour="pill" className="p-6 sm:p-10 flex flex-col justify-between space-y-6 sm:space-y-8 group hover:border-[#c9b293]/50 transition-all duration-300">
               <div className="space-y-3 sm:space-y-4">
-                <AtelierBadge variant="gold">
-                  Flagship Appointments
-                </AtelierBadge>
+                <div className="flex items-center gap-3">
+                  <AtelierBadge variant="gold">
+                    Flagship Appointments
+                  </AtelierBadge>
+                  <span className="font-serif italic text-sm text-[#dfcaa8] select-none font-normal">
+                    By Private Fitting
+                  </span>
+                </div>
                 <h3 className="text-2xl sm:text-3xl font-serif text-[#f4efe9] leading-tight">
                   Khader Nawaz Khan Salon, Chennai
                 </h3>
@@ -273,9 +278,14 @@ export default function HomePage() {
       <section className="py-20 sm:py-24 bg-[#141312] relative overflow-hidden" aria-labelledby="newsletter-heading">
         <div className="max-w-2xl mx-auto px-4 relative z-10">
           <OrganicCard contour="pill" glow className="p-6 sm:p-12 text-center space-y-5">
-            <AtelierBadge variant="gold">
-              The Aurora Circle
-            </AtelierBadge>
+            <div className="flex items-center justify-center gap-3">
+              <AtelierBadge variant="gold">
+                The Aurora Circle
+              </AtelierBadge>
+              <span className="font-serif italic text-sm text-[#dfcaa8] select-none font-normal">
+                Private Privilege
+              </span>
+            </div>
             <h2 id="newsletter-heading" className="text-2xl sm:text-4xl font-serif text-[#f4efe9]">
               Receive private editions &amp; notes.
             </h2>

@@ -67,13 +67,18 @@ export function CartDrawer() {
             >
               {/* Header (H2 Dialog Title) */}
               <div className="px-6 py-4 border-b border-[#302e2a] flex items-center justify-between">
-                <h2 id="cart-drawer-title" className="text-lg font-serif text-[#f4efe9]">
-                  Shopping Bag ({cart.reduce((n, i) => n + i.quantity, 0)})
-                </h2>
+                <div className="flex items-baseline gap-2">
+                  <h2 id="cart-drawer-title" className="text-lg font-serif text-[#f4efe9]">
+                    Shopping Bag ({cart.reduce((n, i) => n + i.quantity, 0)})
+                  </h2>
+                  <span className="font-serif italic text-xs text-[#dfcaa8] select-none font-normal">
+                    Curated
+                  </span>
+                </div>
                 <button
                   type="button"
                   onClick={() => setIsCartOpen(false)}
-                  className="p-1.5 text-[#a7a299] hover:text-white"
+                  className="p-1.5 text-[#a7a299] hover:text-white cursor-pointer"
                   aria-label="Close bag"
                 >
                   <X className="w-5 h-5" />
@@ -209,7 +214,7 @@ export function CartDrawer() {
                   <Link
                     href="/checkout"
                     onClick={() => setIsCartOpen(false)}
-                    className="w-full py-2.5 bg-[#c9b293] hover:bg-[#dfcaa8] text-[#181716] font-sans text-xs font-medium flex items-center justify-between px-5 transition-colors rounded-full shadow-sm"
+                    className="w-full py-2.5 bg-[#c9b293] hover:bg-[#dfcaa8] text-[#181716] font-sans text-xs uppercase tracking-[0.08em] font-medium flex items-center justify-between px-5 transition-colors rounded-full shadow-sm hover:shadow-[0_4px_16px_rgba(201,178,147,0.25)] active:scale-[0.98]"
                   >
                     <span>Proceed to Checkout</span>
                     <ArrowRight className="w-3.5 h-3.5" />

@@ -108,10 +108,13 @@ export function HeroParallax() {
           ref={contentRef}
           className="max-w-xl space-y-5 sm:space-y-6"
         >
-          <div className="hero-anim-item">
+          <div className="hero-anim-item flex flex-wrap items-center gap-3">
             <AtelierBadge variant="gold" icon={Sparkles}>
               High Summer Edit · 2026
             </AtelierBadge>
+            <span className="font-serif italic text-base sm:text-lg text-[#dfcaa8] tracking-normal select-none">
+              Handcrafted in Chennai
+            </span>
           </div>
 
           <h1 className="hero-anim-item text-4xl sm:text-6xl lg:text-7xl font-serif text-[#f4efe9] leading-[1.05] tracking-tight">

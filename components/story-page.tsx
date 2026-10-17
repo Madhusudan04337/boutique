@@ -42,7 +42,7 @@ export function StoryPage() {
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#181716] via-[#181716]/40 to-transparent" />
-          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-[#c9b293]/10 rounded-full blur-[120px] pointer-events-none" />
+          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#c9b293]/12 via-[#c9b293]/3 to-transparent pointer-events-none" />
         </div>
 
         <div className="relative z-10 max-w-3xl mx-auto text-center space-y-5">
@@ -52,8 +52,12 @@ export function StoryPage() {
           </div>
 
           <h1 className="text-4xl sm:text-6xl font-serif text-[#f4efe9] leading-[1.1] tracking-tight">
-            Clothing crafted with <em>unhurried patience.</em>
+            Clothing crafted with <em className="text-[#c9b293] font-normal italic">unhurried patience.</em>
           </h1>
+
+          <p className="font-serif italic text-lg sm:text-xl text-[#dfcaa8] max-w-xl mx-auto select-none font-normal leading-relaxed">
+            &ldquo;Every stitch an homage to the slow, quiet mastery of natural fibers.&rdquo;
+          </p>
 
           <p className="text-sm sm:text-base font-sans text-[#cfcac2] max-w-xl mx-auto leading-relaxed prose-readable">
             A wardrobe of considered silhouettes and tactile natural fibers, designed in our Chennai atelier.
@@ -94,12 +98,16 @@ export function StoryPage() {
               </p>
             </div>
 
-            <div className="pt-2">
+            <div className="pt-4 border-t border-[#312f2a] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div>
+                <span className="text-[10px] font-mono text-[#827d75] uppercase tracking-wider block">Founders &amp; Master Draper</span>
+                <span className="font-script text-2xl text-[#dfcaa8] select-none">Ananthi Ramanathan &amp; K. Selvam</span>
+              </div>
               <Link
                 href="/collection"
-                className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#c9b293] hover:bg-[#dfcaa8] text-[#181716] font-sans text-xs font-medium rounded-full transition-all duration-300 hover:scale-[1.02] shadow-md"
+                className="inline-flex items-center gap-1.5 px-4.5 py-2 bg-[#c9b293] hover:bg-[#dfcaa8] text-[#181716] font-sans text-xs uppercase tracking-[0.07em] font-medium rounded-full transition-all duration-300 hover:scale-[1.02] shadow-md cursor-pointer"
               >
-                <span>Explore The Wardrobe</span>
+                <span>Explore Wardrobe</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>

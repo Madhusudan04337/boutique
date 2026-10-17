@@ -26,7 +26,9 @@ export function SiteHeader() {
     setIsCartOpen,
     setIsSearchOpen,
     setIsSalonModalOpen,
+    isSalonModalOpen,
     setIsProvenanceModalOpen,
+    isProvenanceModalOpen,
     setIsStylistDrawerOpen,
     user,
     setIsAuthModalOpen,
@@ -55,6 +57,13 @@ export function SiteHeader() {
   const wishlistLength = mounted ? wishlist.length : 0
   const cartItemCount = mounted ? cartCount : 0
 
+  const getNavLinkClass = (isActive: boolean) =>
+    `text-xs font-sans uppercase tracking-[0.15em] font-medium py-1 border-b-2 transition-all duration-200 cursor-pointer inline-flex items-center ${
+      isActive
+        ? 'border-[#c9b293] text-[#c9b293]'
+        : 'border-transparent text-[#b5b0a6] hover:text-[#f4efe9] hover:border-[#f4efe9]/30'
+    }`
+
   return (
     <>
       <header
@@ -76,15 +85,18 @@ export function SiteHeader() {
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
 
-            <Link href="/" className="group" aria-label="AURORA Atelier Homepage">
+            <Link href="/" className="group flex items-baseline gap-2" aria-label="AURORA Atelier Homepage">
               <div className="flex flex-col leading-none">
                 <span className="font-sans text-xl font-medium tracking-[0.25em] text-[#f4efe9] group-hover:text-[#c9b293] transition-colors uppercase">
                   AURORA
                 </span>
                 <span className="mt-1 font-mono text-[9px] tracking-[0.18em] text-[#8a857d] uppercase">
-                  ATELIER
+                  CHENNAI
                 </span>
               </div>
+              <span className="font-script text-lg text-[#c9b293] hidden sm:inline -mb-0.5 select-none font-normal">
+                Atelier
+              </span>
             </Link>
           </div>
 
@@ -92,22 +104,14 @@ export function SiteHeader() {
           <nav className="hidden lg:flex items-center gap-8">
             <Link
               href="/collection"
-              className={`text-xs font-sans uppercase tracking-[0.14em] font-medium transition-colors py-1 border-b-2 cursor-pointer ${
-                pathname === '/collection'
-                  ? 'border-[#c9b293] text-[#c9b293]'
-                  : 'border-transparent text-[#b5b0a6] hover:text-[#f4efe9]'
-              }`}
+              className={getNavLinkClass(pathname === '/collection')}
             >
               Catalog
             </Link>
 
             <Link
               href="/story"
-              className={`text-xs font-sans uppercase tracking-[0.14em] font-medium transition-colors py-1 border-b-2 cursor-pointer ${
-                pathname === '/story'
-                  ? 'border-[#c9b293] text-[#c9b293]'
-                  : 'border-transparent text-[#b5b0a6] hover:text-[#f4efe9]'
-              }`}
+              className={getNavLinkClass(pathname === '/story')}
             >
               Atelier Story
             </Link>
@@ -115,7 +119,7 @@ export function SiteHeader() {
             <button
               type="button"
               onClick={() => setIsProvenanceModalOpen(true)}
-              className="text-xs font-sans uppercase tracking-[0.14em] font-medium text-[#b5b0a6] hover:text-[#c9b293] transition-colors py-1 cursor-pointer"
+              className={getNavLinkClass(isProvenanceModalOpen)}
             >
               Provenance
             </button>
@@ -123,7 +127,7 @@ export function SiteHeader() {
             <button
               type="button"
               onClick={() => setIsSalonModalOpen(true)}
-              className="text-xs font-sans uppercase tracking-[0.14em] font-medium text-[#b5b0a6] hover:text-[#c9b293] transition-colors py-1 cursor-pointer"
+              className={getNavLinkClass(isSalonModalOpen)}
             >
               Salon Fitting
             </button>
@@ -224,15 +228,19 @@ export function SiteHeader() {
               <Link
                 href="/collection"
                 onClick={() => setMobileMenuOpen(false)}
-                className="py-2 text-xs font-sans uppercase tracking-wider text-[#f4efe9] hover:text-[#c9b293] border-b border-[#282622]"
+                className={`py-2 text-xs font-sans uppercase tracking-[0.14em] font-medium border-b border-[#282622] text-left transition-colors ${
+                  pathname === '/collection' ? 'text-[#c9b293]' : 'text-[#f4efe9] hover:text-[#c9b293]'
+                }`}
               >
-                Catalog Collection
+                Catalog
               </Link>
 
               <Link
                 href="/story"
                 onClick={() => setMobileMenuOpen(false)}
-                className="py-2 text-xs font-sans uppercase tracking-wider text-[#f4efe9] hover:text-[#c9b293] border-b border-[#282622]"
+                className={`py-2 text-xs font-sans uppercase tracking-[0.14em] font-medium border-b border-[#282622] text-left transition-colors ${
+                  pathname === '/story' ? 'text-[#c9b293]' : 'text-[#f4efe9] hover:text-[#c9b293]'
+                }`}
               >
                 Atelier Story
               </Link>
@@ -243,9 +251,11 @@ export function SiteHeader() {
                   setMobileMenuOpen(false)
                   setIsProvenanceModalOpen(true)
                 }}
-                className="py-2 text-xs font-sans uppercase tracking-wider text-[#f4efe9] hover:text-[#c9b293] border-b border-[#282622] cursor-pointer"
+                className={`py-2 text-xs font-sans uppercase tracking-[0.14em] font-medium border-b border-[#282622] text-left transition-colors cursor-pointer ${
+                  isProvenanceModalOpen ? 'text-[#c9b293]' : 'text-[#f4efe9] hover:text-[#c9b293]'
+                }`}
               >
-                Textile Provenance
+                Provenance
               </button>
 
               <button
@@ -254,9 +264,11 @@ export function SiteHeader() {
                   setMobileMenuOpen(false)
                   setIsSalonModalOpen(true)
                 }}
-                className="py-2 text-xs font-sans uppercase tracking-wider text-[#f4efe9] hover:text-[#c9b293] border-b border-[#282622] cursor-pointer"
+                className={`py-2 text-xs font-sans uppercase tracking-[0.14em] font-medium border-b border-[#282622] text-left transition-colors cursor-pointer ${
+                  isSalonModalOpen ? 'text-[#c9b293]' : 'text-[#f4efe9] hover:text-[#c9b293]'
+                }`}
               >
-                Salon Fitting Appointment
+                Salon Fitting
               </button>
 
               <button

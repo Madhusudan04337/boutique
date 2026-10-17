@@ -45,8 +45,8 @@ export function EditorialPress() {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Organic Center Aura Blob */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[#c9b293]/7 rounded-full blur-[130px] pointer-events-none" />
+      {/* Organic Center Aura */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#c9b293]/10 via-[#c9b293]/2 to-transparent pointer-events-none" />
 
       {/* Decorative Organic Wave Hairlines */}
       <div className="absolute inset-0 pointer-events-none opacity-20">
@@ -61,9 +61,14 @@ export function EditorialPress() {
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-8 relative z-10">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#201f1c]/90 border border-[#38352f] text-[10px] font-mono uppercase tracking-[0.26em] text-[#c9b293]">
-          <Sparkles className="w-3 h-3" />
-          <span>Editorial &amp; Client Acclaim</span>
+        <div className="flex items-center justify-center gap-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#201f1c]/90 border border-[#38352f] text-[10px] font-mono uppercase tracking-[0.26em] text-[#c9b293]">
+            <Sparkles className="w-3 h-3" />
+            <span>Editorial &amp; Client Acclaim</span>
+          </div>
+          <span className="font-serif italic text-sm text-[#dfcaa8] select-none font-normal">
+            Critically Celebrated
+          </span>
         </div>
 
         <h2 id="press-acclaim-heading" className="sr-only">

@@ -8,12 +8,25 @@ export function SiteFooter() {
   const { setIsSalonModalOpen, setIsProvenanceModalOpen } = useStore()
 
   return (
-    <footer className="bg-[#141312] border-t border-[#292724] text-[#a7a297] pt-16 pb-12 text-xs font-sans">
+    <footer className="bg-[#141312] border-t border-[#292724] text-[#a7a297] pt-14 pb-12 text-xs font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Editorial Motto Banner */}
+        <div className="pb-8 mb-10 border-b border-[#292724] flex flex-col md:flex-row items-baseline justify-between gap-3">
+          <p className="font-serif italic text-xl sm:text-2xl text-[#dfcaa8] select-none font-normal leading-relaxed">
+            &ldquo;Clothing crafted with unhurried patience, cherished for lifetimes.&rdquo;
+          </p>
+          <span className="font-sans text-[10.5px] uppercase tracking-[0.16em] text-[#827d75]">
+            Handcrafted In Chennai · Khader Nawaz Khan Road
+          </span>
+        </div>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 pb-12 border-b border-[#292724]">
           {/* Brand */}
           <div className="space-y-3">
-            <span className="text-xl font-serif text-[#f4efe9] tracking-[0.2em] block">AURORA</span>
+            <div className="flex items-baseline gap-2">
+              <span className="text-xl font-serif text-[#f4efe9] tracking-[0.2em] block">AURORA</span>
+              <span className="font-script text-base text-[#c9b293]">Atelier</span>
+            </div>
             <p className="text-xs text-[#827d75] leading-relaxed max-w-xs">
               Considered everyday elegance. Natural Belgian flax linen and mulberry silk tailored in Chennai, India.
             </p>

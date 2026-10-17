@@ -49,7 +49,7 @@ export function LayoutShell({ children }: LayoutShellProps) {
       <VipStylistDrawer />
       <FloatingVipStylist />
       <ToastNotification />
-      <div className="flex-1 pb-16 md:pb-0">{children}</div>
+      <div className="flex-1 pb-24 md:pb-0">{children}</div>
       <MobileNav />
       <SiteFooter />
     </>

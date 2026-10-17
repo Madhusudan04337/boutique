@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next'
-import { Cormorant_Garamond, Manrope, DM_Mono } from 'next/font/google'
+import { Cormorant_Garamond, Plus_Jakarta_Sans, Pinyon_Script, Alex_Brush, DM_Mono } from 'next/font/google'
 import './globals.css'
 import { MotionConfig } from 'motion/react'
 import { StoreProvider } from '@/lib/store'
@@ -14,10 +14,24 @@ const cormorant = Cormorant_Garamond({
   display: 'swap',
 })
 
-const manrope = Manrope({
+const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  variable: '--font-manrope',
-  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-plus-jakarta',
+  weight: ['300', '400', '500', '600', '700', '800'],
+  display: 'swap',
+})
+
+const pinyonScript = Pinyon_Script({
+  subsets: ['latin'],
+  variable: '--font-pinyon',
+  weight: ['400'],
+  display: 'swap',
+})
+
+const alexBrush = Alex_Brush({
+  subsets: ['latin'],
+  variable: '--font-alex',
+  weight: ['400'],
   display: 'swap',
 })
 
@@ -63,7 +77,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`dark ${cormorant.variable} ${manrope.variable} ${dmMono.variable}`}
+      className={`dark ${cormorant.variable} ${plusJakarta.variable} ${pinyonScript.variable} ${alexBrush.variable} ${dmMono.variable}`}
       suppressHydrationWarning
     >
       <body className="antialiased bg-[#181716] text-[#f4efe9] min-h-screen flex flex-col font-sans selection:bg-[#c9b293]/30" suppressHydrationWarning>

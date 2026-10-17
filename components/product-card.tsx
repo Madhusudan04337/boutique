@@ -115,7 +115,7 @@ export function ProductCard({
               <button
                 type="button"
                 onClick={handleQuickAdd}
-                className="w-full h-8 bg-[#c9b293] hover:bg-[#dfcaa8] text-[#181716] font-sans text-xs font-medium flex items-center justify-center gap-1.5 transition-colors rounded-lg shadow-sm cursor-pointer"
+                className="w-full h-7.5 bg-[#c9b293] hover:bg-[#dfcaa8] text-[#181716] font-sans text-[11px] uppercase tracking-[0.06em] font-medium flex items-center justify-center gap-1.5 transition-colors rounded-full shadow-sm cursor-pointer"
               >
                 {justAdded ? (
                   <>
@@ -136,7 +136,7 @@ export function ProductCard({
                 e.stopPropagation()
                 setShowQuickAdd(true)
               }}
-              className="w-full h-8 px-2.5 bg-[#181716] hover:bg-[#c9b293] hover:text-[#181716] text-[#f4efe9] border border-[#3b3933] text-xs font-sans font-medium flex items-center justify-center gap-1.5 transition-all rounded-full shadow-md cursor-pointer opacity-90 sm:opacity-0 sm:group-hover:opacity-100"
+              className="w-full h-7.5 px-2.5 bg-[#181716] hover:bg-[#c9b293] hover:text-[#181716] text-[#f4efe9] border border-[#3b3933] text-[10.5px] font-sans uppercase tracking-[0.06em] font-medium flex items-center justify-center gap-1.5 transition-all rounded-full shadow-md cursor-pointer opacity-90 sm:opacity-0 sm:group-hover:opacity-100"
             >
               <Plus className="w-3 h-3" />
               <span>Quick Add</span>
@@ -150,7 +150,7 @@ export function ProductCard({
         <div>
           <div className="flex justify-between items-center text-[9px] sm:text-[10px] font-mono text-[#8a857d] mb-1">
             <span>{product.batchNumber}</span>
-            <span>{product.silhouetteFit}</span>
+            <span className="font-sans text-[10px] text-[#a7a297]">{product.silhouetteFit}</span>
           </div>
 
           <h3 className="text-xs sm:text-sm font-serif text-[#f4efe9] group-hover:text-[#c9b293] transition-colors leading-snug truncate">

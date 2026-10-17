@@ -4,20 +4,30 @@ import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion } from 'motion/react'
-import { Home, Compass, Search, Heart, User as UserIcon } from 'lucide-react'
+import { Home, Compass, Search, Heart, User as UserIcon, ArrowUp } from 'lucide-react'
 import { useStore } from '@/lib/store'
 
 export function MobileNav() {
   const pathname = usePathname()
   const { wishlist, setIsSearchOpen, user } = useStore()
   const [mounted, setMounted] = useState(false)
+  const [showScrollTop, setShowScrollTop] = useState(false)
 
   useEffect(() => {
     setMounted(true)
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 300)
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   // Don't render on checkout page to avoid distraction
   if (pathname === '/checkout') return null
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
 
   const isHome = pathname === '/'
   const isCollection = pathname.startsWith('/collection')
@@ -25,8 +35,18 @@ export function MobileNav() {
   const isAccount = pathname.startsWith('/account') || pathname.startsWith('/login')
 
   return (
-    <div className="md:hidden fixed bottom-0 inset-x-0 z-30 bg-[#161514] border-t border-[#302e29] px-2 py-1.5 shadow-[0_-8px_25px_rgba(0,0,0,0.5)]">
-      <nav className="flex items-center justify-around" aria-label="Mobile Bottom Navigation">
+    <div className="md:hidden fixed bottom-0 inset-x-0 z-30 bg-[#161514]/95 backdrop-blur-md border-t border-[#302e29] px-3 pt-2 pb-4 shadow-[0_-10px_30px_rgba(0,0,0,0.6)]">
+      <nav className="flex items-center justify-between max-w-md mx-auto relative" aria-label="Mobile Bottom Navigation">
+        {showScrollTop && (
+          <button
+            type="button"
+            onClick={scrollToTop}
+            className="absolute -top-12 right-2 w-9 h-9 bg-[#c9b293] hover:bg-[#dfcaa8] text-[#181716] rounded-full flex items-center justify-center shadow-lg transition-all cursor-pointer animate-in fade-in zoom-in duration-200"
+            aria-label="Scroll to top"
+          >
+            <ArrowUp className="w-4 h-4" />
+          </button>
+        )}
         {/* 1. Home */}
         <Link
           href="/"

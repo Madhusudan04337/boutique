@@ -144,13 +144,18 @@ export function SalonBookingModal() {
                   <X className="w-4 h-4" />
                 </button>
 
-                <div className="absolute bottom-4 left-6 right-6">
-                  <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#c9b293] block">
-                    Private Flagship Appointment
+                <div className="absolute bottom-4 left-6 right-6 flex items-end justify-between">
+                  <div>
+                    <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#c9b293] block">
+                      Private Flagship Appointment
+                    </span>
+                    <h2 id="salon-modal-title" className="text-xl sm:text-2xl font-serif text-[#f4efe9]">
+                      Chennai Salon Fitting
+                    </h2>
+                  </div>
+                  <span className="font-serif italic text-sm text-[#dfcaa8] hidden sm:block select-none">
+                    Tailored for you
                   </span>
-                  <h2 id="salon-modal-title" className="text-xl sm:text-2xl font-serif text-[#f4efe9]">
-                    Chennai Salon Fitting
-                  </h2>
                 </div>
               </div>
 
@@ -167,6 +172,9 @@ export function SalonBookingModal() {
                     <h3 className="text-xl font-serif text-[#f4efe9]">
                       We Look Forward to Welcoming You
                     </h3>
+                    <p className="font-serif italic text-base sm:text-lg text-[#dfcaa8] block select-none">
+                      &ldquo;Honored to dress you in unhurried elegance.&rdquo;
+                    </p>
                     <p className="text-xs font-sans text-[#a7a297] max-w-sm mx-auto leading-relaxed">
                       Your fitting session with our head draper has been reserved at our Khader Nawaz Khan Road salon.
                     </p>
@@ -327,7 +335,7 @@ export function SalonBookingModal() {
 
                   <button
                     type="submit"
-                    className="w-full py-2.5 sm:py-3 bg-[#c9b293] hover:bg-[#dfcaa8] text-[#181716] font-mono text-xs uppercase tracking-wider font-semibold rounded-lg transition-colors mt-2 flex items-center justify-center gap-2 cursor-pointer shadow-sm"
+                    className="w-full py-2.5 sm:py-3 bg-[#c9b293] hover:bg-[#dfcaa8] text-[#181716] font-sans text-xs uppercase tracking-[0.08em] font-medium rounded-full transition-all mt-3 flex items-center justify-center gap-2 cursor-pointer shadow-sm hover:shadow-[0_4px_16px_rgba(201,178,147,0.25)] active:scale-[0.98]"
                   >
                     <Sparkles className="w-3.5 h-3.5" />
                     <span>Confirm Private Reservation</span>

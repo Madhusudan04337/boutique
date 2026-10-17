@@ -38,9 +38,14 @@ export function PackagingModal({
             >
               <div className="flex justify-between items-start border-b border-[#2e2c28] pb-4">
                 <div>
-                  <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#c9b293] block mb-1">
-                    The Atelier Experience
-                  </span>
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#c9b293] block">
+                      The Atelier Experience
+                    </span>
+                    <span className="font-serif italic text-xs text-[#dfcaa8] select-none">
+                      Archival Ritual
+                    </span>
+                  </div>
                   <h2 id="packaging-modal-title" className="text-2xl font-serif text-[#f4efe9]">
                     Signature Packaging &amp; Unboxing Ritual
                   </h2>
@@ -48,7 +53,7 @@ export function PackagingModal({
                 <button
                   type="button"
                   onClick={onClose}
-                  className="p-1.5 text-[#a7a297] hover:text-white"
+                  className="p-1.5 text-[#a7a297] hover:text-white cursor-pointer"
                   aria-label="Close dialog"
                 >
                   <X className="w-5 h-5" />
@@ -117,7 +122,7 @@ export function PackagingModal({
                 <button
                   type="button"
                   onClick={onClose}
-                  className="px-5 py-2.5 bg-[#c9b293] hover:bg-[#dfcaa8] text-[#181716] font-semibold rounded-full transition-colors"
+                  className="px-5 py-2 bg-[#c9b293] hover:bg-[#dfcaa8] text-[#181716] font-sans text-xs uppercase tracking-[0.07em] font-medium rounded-full transition-colors cursor-pointer"
                 >
                   Understood
                 </button>

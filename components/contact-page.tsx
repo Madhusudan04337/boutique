@@ -23,17 +23,22 @@ export function ContactPage() {
     <main className="bg-[#181716] text-[#f4efe9] min-h-screen py-16 sm:py-24 selection:bg-[#c9b293] selection:text-[#181716]">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Page Header */}
-        <div className="pb-10 border-b border-[#2d2b27] mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#201f1c] border border-[#38352f] text-[10px] font-mono uppercase tracking-[0.24em] text-[#c9b293] mb-4">
-            <Sparkles className="w-3 h-3" />
-            <span>Private Clienteling &amp; Care</span>
+        <div className="pb-10 border-b border-[#2d2b27] mb-14 flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#201f1c] border border-[#38352f] text-[10px] font-mono uppercase tracking-[0.24em] text-[#c9b293] mb-4">
+              <Sparkles className="w-3 h-3" />
+              <span>Private Clienteling &amp; Care</span>
+            </div>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif text-[#f4efe9] leading-tight">
+              Contact the <em className="text-[#c9b293] font-normal italic">atelier.</em>
+            </h1>
+            <p className="text-sm sm:text-base font-sans text-[#a7a297] mt-3 max-w-xl leading-relaxed prose-readable">
+              Personal guidance regarding sizing, bespoke hemline alterations, textile care, or scheduling your private salon visit.
+            </p>
           </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif text-[#f4efe9] leading-tight">
-            Contact the <em>atelier.</em>
-          </h1>
-          <p className="text-sm sm:text-base font-sans text-[#a7a297] mt-3 max-w-xl leading-relaxed prose-readable">
-            Personal guidance regarding sizing, bespoke hemline alterations, textile care, or scheduling your private salon visit.
-          </p>
+          <span className="font-serif italic text-lg sm:text-xl text-[#dfcaa8] select-none font-normal shrink-0">
+            Dedicated Concierge
+          </span>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
@@ -99,9 +104,9 @@ export function ContactPage() {
 
                 <button
                   type="submit"
-                  className="w-full py-2.5 sm:py-3.5 bg-[#c9b293] hover:bg-[#dfcaa8] text-[#181716] font-mono text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] rounded-full transition-all duration-300 hover:scale-[1.01] shadow-lg cursor-pointer flex items-center justify-center gap-1.5"
+                  className="w-full py-2.5 sm:py-3 bg-[#c9b293] hover:bg-[#dfcaa8] text-[#181716] font-sans text-xs uppercase tracking-[0.08em] font-medium rounded-full transition-all duration-300 hover:scale-[1.01] shadow-lg cursor-pointer flex items-center justify-center gap-2 active:scale-[0.98]"
                 >
-                  <Send className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                  <Send className="w-3.5 h-3.5" />
                   <span>Send Inquiry Note</span>
                 </button>
               </form>
@@ -151,7 +156,7 @@ export function ContactPage() {
                   <button
                     type="button"
                     onClick={() => setIsSalonModalOpen(true)}
-                    className="w-full py-2.5 px-3 bg-[#c9b293] hover:bg-[#dfcaa8] text-[#181716] font-mono text-xs uppercase tracking-wider font-semibold rounded-xl flex items-center justify-center gap-2 transition-colors cursor-pointer shadow-sm"
+                    className="w-full py-2.5 px-3 bg-[#c9b293] hover:bg-[#dfcaa8] text-[#181716] font-sans text-xs uppercase tracking-[0.08em] font-medium rounded-full flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm active:scale-[0.98]"
                   >
                     <Calendar className="w-3.5 h-3.5" />
                     <span>Book Salon Fitting Appointment</span>

@@ -13,7 +13,7 @@ export function FloatingVipStylist() {
   }
 
   return (
-    <div className="fixed bottom-6 right-6 z-30">
+    <div className="fixed bottom-6 left-6 z-30">
       <button
         type="button"
         onClick={() => setIsStylistDrawerOpen(true)}

@@ -65,7 +65,7 @@ export function AuthView({ initialMode }: AuthViewProps) {
   return (
     <div className="min-h-screen w-full bg-[#121110] text-[#f4efe9] flex flex-col items-center justify-center p-3 sm:p-6 lg:p-10 relative overflow-hidden">
       {/* Subtle ambient luxury glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[450px] bg-[#c9b293]/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[450px] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#c9b293]/10 via-[#c9b293]/2 to-transparent pointer-events-none" />
 
       {/* Top Bar: Return to Boutique & Bespoke Brand Wordmark */}
       <div className="w-full max-w-[1040px] mb-4 flex items-center justify-between px-2 relative z-10">

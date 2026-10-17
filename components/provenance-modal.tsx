@@ -42,9 +42,14 @@ export function ProvenanceModal() {
             >
               <div className="flex justify-between items-start border-b border-[#2e2c28] pb-4">
                 <div>
-                  <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#c9b293] block mb-1">
-                    Textile Provenance
-                  </span>
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#c9b293] block">
+                      Textile Provenance
+                    </span>
+                    <span className="font-serif italic text-xs text-[#dfcaa8] select-none">
+                      Pure Origins
+                    </span>
+                  </div>
                   <h2 id="provenance-modal-title" className="text-2xl font-serif text-[#f4efe9]">
                     Natural Fibers &amp; Craft
                   </h2>
@@ -52,7 +57,7 @@ export function ProvenanceModal() {
                 <button
                   type="button"
                   onClick={() => setIsProvenanceModalOpen(false)}
-                  className="p-1.5 text-[#a7a297] hover:text-white"
+                  className="p-1.5 text-[#a7a297] hover:text-white cursor-pointer"
                   aria-label="Close dialog"
                 >
                   <X className="w-5 h-5" />
@@ -116,7 +121,7 @@ export function ProvenanceModal() {
                 <button
                   type="button"
                   onClick={() => setIsProvenanceModalOpen(false)}
-                  className="px-4 py-2 bg-[#2d2b27] hover:bg-[#383631] text-white rounded-lg transition-colors"
+                  className="px-4 py-1.5 bg-[#2d2b27] hover:bg-[#383631] text-white font-sans text-xs uppercase tracking-[0.07em] font-medium rounded-full transition-colors cursor-pointer"
                 >
                   Close
                 </button>

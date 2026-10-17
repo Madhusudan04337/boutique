@@ -56,7 +56,7 @@ export function SplitShowcase() {
             <div className="p-5 sm:p-7 bg-[#21201d] border border-[#38352f] rounded-3xl space-y-4 sm:space-y-5 shadow-2xl relative overflow-hidden">
               <div>
                 <div className="flex justify-between items-center text-xs font-sans text-[#8f8a81] mb-1">
-                  <span className="uppercase tracking-wider font-medium">{current.category} · {current.origin}</span>
+                  <span className="font-sans text-[11px] uppercase tracking-wider text-[#a7a297] font-medium">{current.category} · {current.origin}</span>
                   <span className="text-[#c9b293] font-mono font-medium">{current.batchNumber}</span>
                 </div>
                 <h3 className="text-xl sm:text-3xl font-serif text-[#f4efe9] leading-tight">
@@ -134,7 +134,7 @@ export function SplitShowcase() {
                 <button
                   type="button"
                   onClick={() => setIsStylistDrawerOpen(true)}
-                  className="w-full py-2.5 px-4 bg-[#1e1d1a] hover:bg-[#252420] border border-[#33312c] rounded-full text-xs font-sans font-medium text-[#c9b293] flex items-center justify-center gap-2 transition-colors cursor-pointer"
+                  className="w-full py-2.5 px-4 bg-[#1e1d1a] hover:bg-[#252420] border border-[#33312c] rounded-full text-xs font-sans uppercase tracking-[0.07em] font-medium text-[#c9b293] flex items-center justify-center gap-2 transition-colors cursor-pointer"
                 >
                   <MessageSquare className="w-3.5 h-3.5 shrink-0" />
                   <span>Consult Head Stylist on WhatsApp</span>

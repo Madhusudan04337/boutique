@@ -65,19 +65,24 @@ export function VipStylistDrawer() {
             >
               <div>
                 {/* Header */}
-                <div className="px-6 py-5 border-b border-[#302e2a] flex items-center justify-between">
-                  <div>
-                    <span className="text-[10px] font-mono uppercase tracking-[0.24em] text-[#c9b293] block">
-                      Private Clienteling
-                    </span>
-                    <h2 id="stylist-drawer-title" className="text-xl font-serif text-[#f4efe9]">
+                <div className="px-6 py-5 border-b border-[#302e2a] flex items-start justify-between gap-4">
+                  <div className="space-y-1">
+                    <div className="flex items-center gap-2">
+                      <span className="text-[10px] font-mono uppercase tracking-[0.24em] text-[#c9b293] block">
+                        Private Clienteling
+                      </span>
+                      <span className="font-serif italic text-xs text-[#dfcaa8] select-none">
+                        Exclusive
+                      </span>
+                    </div>
+                    <h2 id="stylist-drawer-title" className="text-xl sm:text-2xl font-serif text-[#f4efe9]">
                       VIP Stylist Concierge
                     </h2>
                   </div>
                   <button
                     type="button"
                     onClick={() => setIsStylistDrawerOpen(false)}
-                    className="p-1.5 text-[#a7a299] hover:text-white"
+                    className="p-1.5 text-[#a7a299] hover:text-white cursor-pointer"
                     aria-label="Close concierge drawer"
                   >
                     <X className="w-5 h-5" />
@@ -113,7 +118,7 @@ export function VipStylistDrawer() {
                       href="https://wa.me/919840012345?text=Hello%20Aurora%20Salon%2C%20I%20am%20interested%20in%20private%20styling%20advice%20and%20silhouette%20recommendations."
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full py-3.5 px-4 bg-[#25D366]/15 hover:bg-[#25D366]/25 border border-[#25D366]/40 text-[#55e08b] font-mono text-xs uppercase tracking-wider font-semibold rounded-2xl flex items-center justify-center gap-2 transition-all shadow-lg text-center"
+                      className="w-full py-3 px-4 bg-[#25D366]/15 hover:bg-[#25D366]/25 border border-[#25D366]/40 text-[#55e08b] font-sans text-xs uppercase tracking-[0.07em] font-medium rounded-full flex items-center justify-center gap-2 transition-all shadow-lg text-center"
                     >
                       <MessageSquare className="w-4 h-4" />
                       <span>Direct WhatsApp Consultation</span>
@@ -128,7 +133,7 @@ export function VipStylistDrawer() {
                         setIsStylistDrawerOpen(false)
                         setIsSalonModalOpen(true)
                       }}
-                      className="w-full mt-3 py-2.5 px-3 bg-[#262420] hover:bg-[#302e2a] border border-[#3b3832] hover:border-[#c9b293] text-[#c9b293] font-mono text-xs uppercase tracking-wider rounded-xl flex items-center justify-center gap-2 transition-colors cursor-pointer"
+                      className="w-full mt-3 py-2.5 px-3 bg-[#262420] hover:bg-[#302e2a] border border-[#3b3832] hover:border-[#c9b293] text-[#c9b293] font-sans text-xs uppercase tracking-[0.07em] font-medium rounded-full flex items-center justify-center gap-2 transition-colors cursor-pointer"
                     >
                       <Calendar className="w-3.5 h-3.5" />
                       <span>Book In-Person Salon Fitting</span>

@@ -30,13 +30,13 @@ export function AtelierButton({
   disabled,
   ...props
 }: ButtonProps) {
-  const baseClasses = 'inline-flex items-center justify-center font-sans tracking-wide font-medium transition-all duration-200 rounded-full cursor-pointer select-none whitespace-nowrap active:scale-[0.98]'
+  const baseClasses = 'inline-flex items-center justify-center font-sans tracking-[0.07em] uppercase font-medium transition-all duration-200 rounded-full cursor-pointer select-none whitespace-nowrap active:scale-[0.98]'
 
   const sizeClasses = {
-    xs: 'text-[10px] h-7 px-3 gap-1',
-    sm: 'text-xs h-8 px-3.5 gap-1.5',
-    md: 'text-xs h-9 px-4.5 gap-2',
-    lg: 'text-xs sm:text-sm h-10 px-5 sm:px-6 gap-2'
+    xs: 'text-[9.5px] h-6.5 px-2.5 gap-1',
+    sm: 'text-[10.5px] h-7.5 px-3.5 gap-1.5',
+    md: 'text-[11px] sm:text-xs h-8.5 sm:h-9 px-4 gap-1.5',
+    lg: 'text-xs sm:text-[12.5px] h-9.5 sm:h-10 px-5 gap-2'
   }[size]
 
   const variantClasses = {

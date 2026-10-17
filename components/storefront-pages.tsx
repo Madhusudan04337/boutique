@@ -86,10 +86,13 @@ function CollectionPageContent({ arrivalsOnly = false }: { arrivalsOnly?: boolea
       <section className="py-10 sm:py-16 border-b border-[#2a2825] bg-[#1a1917]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6">
           <div>
-            <div className="mb-2">
+            <div className="mb-2 flex items-center gap-3">
               <AtelierBadge variant="gold">
                 {arrivalsOnly ? 'Drop / New Arrivals' : 'The Four Wardrobe Pillars'}
               </AtelierBadge>
+              <span className="font-serif italic text-sm text-[#dfcaa8] select-none font-normal">
+                Chennai Atelier
+              </span>
             </div>
             <h1 className="text-3xl sm:text-5xl font-serif text-[#f4efe9]">
               {arrivalsOnly ? 'Fresh arrivals' : 'The collection'}
@@ -588,8 +591,8 @@ function ProductPageInner({ slug }: { slug?: string }) {
             {/* 1. PRIMARY TITLE, METADATA & PRICING */}
             <div>
               <div className="flex justify-between items-center text-xs font-mono text-[#8a857d] mb-1">
-                <span className="uppercase tracking-wider">{product.category} · {product.color}</span>
-                <span className="text-[#c9b293]">{product.masterTailor}</span>
+                <span className="font-sans text-[11px] uppercase tracking-wider text-[#a7a297] font-medium">{product.category} · {product.color}</span>
+                <span className="text-[#c9b293] font-mono">{product.masterTailor}</span>
               </div>
               <h1 className="text-2xl sm:text-4xl font-serif text-[#f4efe9] leading-tight">
                 {product.name}
@@ -700,7 +703,7 @@ function ProductPageInner({ slug }: { slug?: string }) {
               <button
                 type="button"
                 onClick={() => setIsStylistDrawerOpen(true)}
-                className="w-full py-2 px-3.5 bg-[#23211e] hover:bg-[#2c2a25] border border-[#38352f] text-xs font-sans font-medium text-[#c9b293] rounded-full flex items-center justify-between transition-colors cursor-pointer"
+                className="w-full py-2.5 px-3.5 bg-[#23211e] hover:bg-[#2c2a25] border border-[#38352f] text-xs font-sans uppercase tracking-[0.06em] font-medium text-[#c9b293] rounded-full flex items-center justify-between transition-colors cursor-pointer"
               >
                 <span className="flex items-center gap-1.5 truncate">
                   <MessageSquare className="w-3.5 h-3.5 shrink-0" />
