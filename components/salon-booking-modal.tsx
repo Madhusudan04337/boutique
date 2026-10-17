@@ -127,7 +127,7 @@ export function SalonBookingModal() {
               {/* Header Visual */}
               <div className="relative h-40 sm:h-44 w-full bg-[#181716] overflow-hidden">
                 <Image
-                  src="/images/real-salon.jpg"
+                  src="/site-assets/real-salon.jpg"
                   alt="Aurora Salon Chennai"
                   fill
                   priority

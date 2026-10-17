@@ -93,7 +93,7 @@ export function HeroParallax() {
         className="absolute inset-0 z-0 will-change-transform"
       >
         <Image
-          src="/images/real-hero.jpg"
+          src="/site-assets/real-hero.jpg"
           alt="AURORA High Summer Silk & Linen Editorial"
           fill
           priority

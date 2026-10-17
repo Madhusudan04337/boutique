@@ -68,7 +68,7 @@ export function ProvenanceModal() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-[#33312c]">
                   <Image
-                    src="/images/real-detail-weave.jpg"
+                    src="/site-assets/real-detail-weave.jpg"
                     alt="Macro Belgian flax linen weave"
                     fill
                     className="object-cover"
@@ -81,7 +81,7 @@ export function ProvenanceModal() {
 
                 <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-[#33312c]">
                   <Image
-                    src="/images/real-craft.jpg"
+                    src="/site-assets/real-craft.jpg"
                     alt="Chennai atelier hand tailoring"
                     fill
                     className="object-cover"

@@ -194,7 +194,7 @@ export const DEFAULT_USER: User = {
           size: 'M',
           color: 'Sand Tan',
           price: 6499,
-          image: '/images/real-blazer.jpg',
+          image: '/site-assets/real-blazer.jpg',
           sku: 'SKU-LNB-01-M',
           fabric: '100% Belgian Dew-Retted Flax'
         },
@@ -203,7 +203,7 @@ export const DEFAULT_USER: User = {
           size: '32',
           color: 'Raw Ecru',
           price: 3899,
-          image: '/images/real-pants.jpg',
+          image: '/site-assets/real-pants.jpg',
           sku: 'SKU-PLT-04-32',
           fabric: 'Flanders Flax Linen'
         }
@@ -221,7 +221,7 @@ export const DEFAULT_USER: User = {
           size: 'S',
           color: 'Midnight Noir',
           price: 7299,
-          image: '/images/real-dress.jpg',
+          image: '/site-assets/real-dress.jpg',
           sku: 'SKU-SLK-02-S',
           fabric: '100% Pure Tamil Nadu Mulberry Silk'
         }
@@ -237,7 +237,7 @@ export const styledLooks: StyledLook[] = [
     id: 'look-coastal-tailoring',
     title: 'The Coastal Tailoring Edit',
     subtitle: 'Washed linen blazer paired with high-rise pleated trousers.',
-    image: '/images/real-look1.jpg',
+    image: '/site-assets/real-look1.jpg',
     hotspots: [
       {
         productId: 'linen-blazer-01',
@@ -261,7 +261,7 @@ export const styledLooks: StyledLook[] = [
     id: 'look-evening-slip',
     title: 'The Atelier Evening Edit',
     subtitle: 'Sandwashed mulberry silk slip paired with the raw silk draped wrap.',
-    image: '/images/real-look2.jpg',
+    image: '/site-assets/real-look2.jpg',
     hotspots: [
       {
         productId: 'silk-column-dress-02',
@@ -285,7 +285,7 @@ export const styledLooks: StyledLook[] = [
     id: 'look-studio-terrace',
     title: 'The Studio Drape & Terrace Edit',
     subtitle: 'Crisp organic cotton poplin shirt layered with the fluid midi skirt.',
-    image: '/images/terrace-look.jpg',
+    image: '/site-assets/terrace-look.jpg',
     hotspots: [
       {
         productId: 'everyday-shirt-03',
@@ -500,7 +500,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
               size: 'M',
               color: 'Sand Tan',
               price: 6499,
-              image: '/images/real-blazer.jpg',
+              image: '/site-assets/real-blazer.jpg',
               sku: 'SKU-LNB-01-M',
               fabric: '100% Belgian Dew-Retted Flax'
             }

@@ -431,8 +431,8 @@ function ProductPageInner({ slug }: { slug?: string }) {
 
   const gallery = [
     product.image,
-    product.detailImage || '/images/real-detail-weave.jpg',
-    '/images/real-craft.jpg'
+    product.detailImage || '/site-assets/real-detail-weave.jpg',
+    '/site-assets/real-craft.jpg'
   ]
 
   const wishlisted = isWishlisted(product.id)

@@ -63,7 +63,7 @@ export function PackagingModal({
               {/* Visual Split */}
               <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden border border-[#36342f]">
                 <Image
-                  src="/images/real-craft.jpg"
+                  src="/site-assets/real-craft.jpg"
                   alt="Aurora Handcrafted Packaging"
                   fill
                   className="object-cover filter brightness-[0.85]"

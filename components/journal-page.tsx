@@ -21,7 +21,7 @@ const articles: Article[] = [
     id: 'layering-notes',
     title: 'The art of layering in warm climates',
     date: 'March 2026',
-    image: '/images/real-blazer.jpg',
+    image: '/site-assets/real-blazer.jpg',
     readTime: '3 min read',
     summary: 'Varying open weaves and weights to achieve structural depth without trapping warmth.',
     body: 'In coastal climates, layering relies on fiber breathability. An unlined linen blazer layered over a raw silk camisole allows air to circulate freely while presenting clean, architectural lines. By alternating loose Belgian flax weaves with fine sandwashed mulberry silk, the ensemble responds naturally to ambient breeze while holding an intentional silhouette.'
@@ -30,7 +30,7 @@ const articles: Article[] = [
     id: 'belgian-flax',
     title: 'Notes on Belgian flax and gentle washing',
     date: 'February 2026',
-    image: '/images/real-craft.jpg',
+    image: '/site-assets/real-craft.jpg',
     readTime: '4 min read',
     summary: 'Why unadulterated linen improves with age, cold washing, and natural drying.',
     body: 'European dew-retted flax possesses natural hollow fibers that soften gradually with each wash cycle. We pre-wash our textiles in our Chennai workshop to stabilize drape before cutting. When cared for with pH-neutral soap and dried away from direct harsh sun, the linen fibers bloom, yielding a supple, buttery hand-feel that outlasts synthetic alternatives.'
@@ -39,7 +39,7 @@ const articles: Article[] = [
     id: 'bias-cut',
     title: 'The fluid geometry of true 45° bias cutting',
     date: 'January 2026',
-    image: '/images/real-dress.jpg',
+    image: '/site-assets/real-dress.jpg',
     readTime: '4 min read',
     summary: 'How cutting fabric at a 45-degree diagonal produces natural body contour.',
     body: 'Bias cutting aligns the textile diagonally to the warp and weft grain lines, allowing the weave to expand and contract dynamically around the body. Without restrictive darts, stiff boning, or synthetic elastane, a true bias-cut mulberry silk slip contours gracefully to individual curves while maintaining effortless movement.'

@@ -58,7 +58,7 @@ export function SiteHeader() {
   const cartItemCount = mounted ? cartCount : 0
 
   const getNavLinkClass = (isActive: boolean) =>
-    `text-xs font-sans uppercase tracking-[0.15em] font-medium py-1 border-b-2 transition-all duration-200 cursor-pointer inline-flex items-center ${
+    `text-[11px] sm:text-xs font-sans uppercase tracking-[0.16em] leading-none font-medium py-1 border-b-2 transition-all duration-200 cursor-pointer inline-flex items-center ${
       isActive
         ? 'border-[#c9b293] text-[#c9b293]'
         : 'border-transparent text-[#b5b0a6] hover:text-[#f4efe9] hover:border-[#f4efe9]/30'
@@ -104,14 +104,14 @@ export function SiteHeader() {
           <nav className="hidden lg:flex items-center gap-8">
             <Link
               href="/collection"
-              className={getNavLinkClass(pathname === '/collection')}
+              className={`${getNavLinkClass(pathname === '/collection')} header-nav-item`}
             >
               Catalog
             </Link>
 
             <Link
               href="/story"
-              className={getNavLinkClass(pathname === '/story')}
+              className={`${getNavLinkClass(pathname === '/story')} header-nav-item`}
             >
               Atelier Story
             </Link>
@@ -119,7 +119,7 @@ export function SiteHeader() {
             <button
               type="button"
               onClick={() => setIsProvenanceModalOpen(true)}
-              className={getNavLinkClass(isProvenanceModalOpen)}
+              className={`${getNavLinkClass(isProvenanceModalOpen)} header-nav-item`}
             >
               Provenance
             </button>
@@ -127,7 +127,7 @@ export function SiteHeader() {
             <button
               type="button"
               onClick={() => setIsSalonModalOpen(true)}
-              className={getNavLinkClass(isSalonModalOpen)}
+              className={`${getNavLinkClass(isSalonModalOpen)} header-nav-item`}
             >
               Salon Fitting
             </button>
@@ -143,7 +143,7 @@ export function SiteHeader() {
               aria-label="Search Collection"
             >
               <Search className="w-4 h-4 text-[#c9b293]" />
-              <span className="text-[11px] font-mono tracking-wider">Search</span>
+              <span className="text-[11px] sm:text-xs font-mono tracking-[0.14em] uppercase leading-none">Search</span>
             </button>
 
             {/* Account / Client Circle Button: Desktop only (Mobile has dedicated bottom account tab) */}
@@ -156,7 +156,7 @@ export function SiteHeader() {
                 <div className="w-4 h-4 rounded-full bg-[#c9b293] text-[#181716] text-[9px] font-mono font-bold flex items-center justify-center">
                   {user.firstName[0]}
                 </div>
-                <span className="hidden lg:inline text-[11px] font-sans font-medium text-[#cfcac2] group-hover:text-white">
+                <span className="hidden lg:inline text-[11px] sm:text-xs font-sans font-medium tracking-[0.12em] uppercase leading-none text-[#cfcac2] group-hover:text-white">
                   {user.firstName}
                 </span>
               </Link>
@@ -167,7 +167,7 @@ export function SiteHeader() {
                 aria-label="Sign In or Join Circle"
               >
                 <UserIcon className="w-4 h-4 text-[#c9b293]" />
-                <span className="hidden lg:inline text-[11px] font-sans font-medium">Sign In</span>
+                <span className="hidden lg:inline text-[11px] sm:text-xs font-sans font-medium tracking-[0.12em] uppercase leading-none">Sign In</span>
               </Link>
             )}
 
@@ -192,7 +192,7 @@ export function SiteHeader() {
               aria-label="Shopping Bag"
             >
               <ShoppingBag className="w-4 h-4" />
-              <span className="hidden sm:inline text-xs font-mono font-semibold">
+              <span className="hidden sm:inline text-[11px] sm:text-xs font-mono font-semibold tracking-[0.12em] uppercase leading-none">
                 {cartItemCount} {cartItemCount === 1 ? 'Piece' : 'Pieces'}
               </span>
               {cartItemCount > 0 && (
@@ -219,7 +219,7 @@ export function SiteHeader() {
               <Link
                 href={user ? '/account' : '/login'}
                 onClick={() => setMobileMenuOpen(false)}
-                className="py-2 text-xs font-sans uppercase tracking-wider text-[#c9b293] hover:text-white border-b border-[#282622] flex items-center justify-between"
+                className="py-2 text-[11px] sm:text-xs font-sans uppercase tracking-[0.16em] leading-none text-[#c9b293] hover:text-white border-b border-[#282622] flex items-center justify-between"
               >
                 <span>{user ? `Account (${user.firstName})` : 'Client Sign In / Register'}</span>
                 <UserIcon className="w-4 h-4" />
@@ -228,7 +228,7 @@ export function SiteHeader() {
               <Link
                 href="/collection"
                 onClick={() => setMobileMenuOpen(false)}
-                className={`py-2 text-xs font-sans uppercase tracking-[0.14em] font-medium border-b border-[#282622] text-left transition-colors ${
+                className={`py-2 text-[11px] sm:text-xs font-sans uppercase tracking-[0.16em] leading-none font-medium border-b border-[#282622] text-left transition-colors ${
                   pathname === '/collection' ? 'text-[#c9b293]' : 'text-[#f4efe9] hover:text-[#c9b293]'
                 }`}
               >
@@ -238,7 +238,7 @@ export function SiteHeader() {
               <Link
                 href="/story"
                 onClick={() => setMobileMenuOpen(false)}
-                className={`py-2 text-xs font-sans uppercase tracking-[0.14em] font-medium border-b border-[#282622] text-left transition-colors ${
+                className={`py-2 text-[11px] sm:text-xs font-sans uppercase tracking-[0.16em] leading-none font-medium border-b border-[#282622] text-left transition-colors ${
                   pathname === '/story' ? 'text-[#c9b293]' : 'text-[#f4efe9] hover:text-[#c9b293]'
                 }`}
               >
@@ -251,7 +251,7 @@ export function SiteHeader() {
                   setMobileMenuOpen(false)
                   setIsProvenanceModalOpen(true)
                 }}
-                className={`py-2 text-xs font-sans uppercase tracking-[0.14em] font-medium border-b border-[#282622] text-left transition-colors cursor-pointer ${
+                className={`py-2 text-[11px] sm:text-xs font-sans uppercase tracking-[0.16em] leading-none font-medium border-b border-[#282622] text-left transition-colors cursor-pointer ${
                   isProvenanceModalOpen ? 'text-[#c9b293]' : 'text-[#f4efe9] hover:text-[#c9b293]'
                 }`}
               >
@@ -264,7 +264,7 @@ export function SiteHeader() {
                   setMobileMenuOpen(false)
                   setIsSalonModalOpen(true)
                 }}
-                className={`py-2 text-xs font-sans uppercase tracking-[0.14em] font-medium border-b border-[#282622] text-left transition-colors cursor-pointer ${
+                className={`py-2 text-[11px] sm:text-xs font-sans uppercase tracking-[0.16em] leading-none font-medium border-b border-[#282622] text-left transition-colors cursor-pointer ${
                   isSalonModalOpen ? 'text-[#c9b293]' : 'text-[#f4efe9] hover:text-[#c9b293]'
                 }`}
               >

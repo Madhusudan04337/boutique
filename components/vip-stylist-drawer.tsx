@@ -93,7 +93,7 @@ export function VipStylistDrawer() {
                 <div className="p-5 bg-[#252420] border-b border-[#302e2a] flex items-center gap-4">
                   <div className="relative w-12 h-12 rounded-full overflow-hidden border border-[#c9b293]/40 shrink-0">
                     <Image
-                      src="/images/real-hero.jpg"
+                      src="/site-assets/real-hero.jpg"
                       alt="Head Stylist Ananya"
                       fill
                       className="object-cover"

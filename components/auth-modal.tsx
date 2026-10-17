@@ -151,7 +151,7 @@ export function AuthModal() {
                       {/* Tall photo on left */}
                       <div className="relative aspect-[3/4] rounded-2xl overflow-hidden border border-[#38352f]">
                         <Image
-                          src="/images/real-dress.jpg"
+                          src="/site-assets/real-dress.jpg"
                           alt="Mulberry Silk Bias Cut Slip"
                           fill
                           sizes="(max-width: 1024px) 50vw, 25vw"
@@ -167,7 +167,7 @@ export function AuthModal() {
                       <div className="flex flex-col gap-2.5">
                         <div className="relative h-[calc(50%-5px)] rounded-xl overflow-hidden border border-[#38352f]">
                           <Image
-                            src="/images/real-blazer.jpg"
+                            src="/site-assets/real-blazer.jpg"
                             alt="Belgian Linen Blazer Tailoring"
                             fill
                             sizes="(max-width: 1024px) 50vw, 25vw"
@@ -181,7 +181,7 @@ export function AuthModal() {
 
                         <div className="relative h-[calc(50%-5px)] rounded-xl overflow-hidden border border-[#38352f]">
                           <Image
-                            src="/images/real-linen-close.jpg"
+                            src="/site-assets/real-linen-close.jpg"
                             alt="100% Belgian Dew-Retted Flax"
                             fill
                             sizes="(max-width: 1024px) 50vw, 25vw"

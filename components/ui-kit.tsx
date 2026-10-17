@@ -265,17 +265,17 @@ export function SectionHeader({
     <div className={`relative z-10 mb-6 sm:mb-10 flex flex-col ${align === 'center' ? 'items-center text-center' : 'sm:flex-row sm:items-end justify-between'} gap-3 sm:gap-4 ${className}`}>
       <div className={align === 'center' ? 'max-w-2xl' : 'max-w-xl'}>
         {kicker && (
-          <div className="mb-2">
+          <div className="mb-2.5">
             <AtelierBadge variant="gold" icon={KickerIcon}>
               {kicker}
             </AtelierBadge>
           </div>
         )}
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif text-[#f4efe9] leading-tight tracking-tight">
+        <h2 className="font-serif text-[#f4efe9] leading-[0.94] tracking-[-0.05em] text-balance">
           {title}
         </h2>
         {description && (
-          <p className="text-xs sm:text-sm font-sans text-[#a7a297] mt-1.5 sm:mt-2.5 leading-relaxed prose-readable">
+          <p className="text-[0.8rem] sm:text-sm font-sans text-[#a7a297] mt-2 sm:mt-3 leading-relaxed prose-readable">
             {description}
           </p>
         )}

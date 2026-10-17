@@ -127,7 +127,7 @@ export function AuthView({ initialMode }: AuthViewProps) {
                 {/* Left tall photo: Mulberry Silk Bias Cut Slip */}
                 <div className="relative h-full rounded-2xl overflow-hidden shadow-sm bg-[#161514] border border-[#35332e] group">
                   <Image
-                    src="/images/real-dress.jpg"
+                    src="/site-assets/real-dress.jpg"
                     alt="Mulberry Silk Bias Cut Slip Drape"
                     fill
                     sizes="(max-width: 1024px) 50vw, 25vw"
@@ -144,7 +144,7 @@ export function AuthView({ initialMode }: AuthViewProps) {
                 <div className="grid grid-rows-2 gap-3 h-full">
                   <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-sm bg-[#161514] border border-[#35332e] group">
                     <Image
-                      src="/images/real-blazer.jpg"
+                      src="/site-assets/real-blazer.jpg"
                       alt="Hand-Pressing Belgian Flax Linen Blazer"
                       fill
                       sizes="(max-width: 1024px) 50vw, 25vw"
@@ -158,7 +158,7 @@ export function AuthView({ initialMode }: AuthViewProps) {
 
                   <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-sm bg-[#161514] border border-[#35332e] group">
                     <Image
-                      src="/images/real-linen-close.jpg"
+                      src="/site-assets/real-linen-close.jpg"
                       alt="100% Belgian Dew-Retted Flanders Flax Linen Weave"
                       fill
                       sizes="(max-width: 1024px) 50vw, 25vw"

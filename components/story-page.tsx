@@ -11,19 +11,19 @@ const milestones = [
     year: '2020',
     title: 'Conception & The Chennai Loom',
     description: 'Founded in Chennai with an uncompromising focus on relaxed, architectural tailoring in European dew-retted flax and raw silk.',
-    image: '/images/real-craft.jpg'
+    image: '/site-assets/real-craft.jpg'
   },
   {
     year: '2023',
     title: 'Heritage Weaving Alliances',
     description: 'Refined local sourcing with master handloom weavers in Tamil Nadu, securing single-source unbroken mulberry silk threads and natural horn closures.',
-    image: '/images/real-shirt.jpg'
+    image: '/site-assets/real-shirt.jpg'
   },
   {
     year: '2026',
     title: 'The Contemporary Flagship',
     description: 'Every silhouette remains hand-cut and individually numbered in limited micro-batches of thirty to fifty pieces on Khader Nawaz Khan Road.',
-    image: '/images/real-hero.jpg'
+    image: '/site-assets/real-hero.jpg'
   }
 ]
 
@@ -34,7 +34,7 @@ export function StoryPage() {
       <section className="relative min-h-[65vh] sm:min-h-[75vh] flex items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8 py-20">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/real-hero.jpg"
+            src="/site-assets/real-hero.jpg"
             alt="Aurora Studio"
             fill
             priority
@@ -70,7 +70,7 @@ export function StoryPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           <div className="lg:col-span-6 relative aspect-[4/3] bg-[#201f1c] border border-[#36342f] overflow-hidden rounded-t-[4rem] rounded-b-2xl shadow-2xl">
             <Image
-              src="/images/real-dress.jpg"
+              src="/site-assets/real-dress.jpg"
               alt="Silk drape silhouette"
               fill
               className="object-cover filter brightness-[0.94]"

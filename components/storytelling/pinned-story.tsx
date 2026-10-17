@@ -15,7 +15,7 @@ const storyChapters = [
     title: 'The Loom & The Flax',
     subtitle: 'Kortrijk, Flanders to Coastal Tamil Nadu',
     text: 'Every yard of our unbleached linen begins in the historic rain-fed river valleys of Flanders. Grown without synthetic pesticides, the flax stalks are naturally water-retted before being spun into dense, breathable slub yarn.',
-    image: '/images/real-linen-close.jpg',
+    image: '/site-assets/real-linen-close.jpg',
     metric: '185 GSM Pure Flanders Flax',
   },
   {
@@ -23,7 +23,7 @@ const storyChapters = [
     title: 'Hand-Basted Craftsmanship',
     subtitle: 'Chennai Master Tailors',
     text: 'In our light-filled workshop, each blazer jacket canvas is hand-shaped with animal-free horsehair alternatives. Over forty-two separate pressing steps sculpt lapels that roll softly against the collarbone without stiff interfacings.',
-    image: '/images/real-blazer.jpg',
+    image: '/site-assets/real-blazer.jpg',
     metric: '42 Hand-Pressing Steps',
   },
   {
@@ -31,7 +31,7 @@ const storyChapters = [
     title: 'True Bias Cut',
     subtitle: 'Mulberry Silk at 45 Degrees',
     text: 'Cutting at a true 45-degree angle releases the silk warp and weft, allowing garments to skim natural bodily curves like liquid water. We allow the cut panels to hang for 48 hours before final hemming to guarantee true drape.',
-    image: '/images/real-dress.jpg',
+    image: '/site-assets/real-dress.jpg',
     metric: '48hr Pre-Drape Hang Time',
   },
 ]

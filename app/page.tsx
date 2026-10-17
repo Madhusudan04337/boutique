@@ -18,28 +18,28 @@ import { HorizontalGallery } from '@/components/storytelling/horizontal-gallery'
 const pillars = [
   {
     name: 'Tailoring',
-    image: 'https://picsum.photos/seed/tailor1/800/1000',
+    image: '/site-assets/real-blazer.jpg',
     href: '/collection?category=Tailoring',
     count: 'Blazers & Coats',
     accent: 'Hand-basted canvas'
   },
   {
     name: 'Silk Dresses',
-    image: 'https://picsum.photos/seed/silk2/800/1000',
+    image: '/site-assets/drape-look.jpg',
     href: '/collection?category=Silk%20Dresses',
     count: 'Bias-Cut Slips',
     accent: '45° True bias contour'
   },
   {
     name: 'Tops & Shirts',
-    image: 'https://picsum.photos/seed/shirt3/800/1000',
+    image: '/site-assets/real-top.jpg',
     href: '/collection?category=Tops%20%26%20Shirts',
     count: 'Poplin & Raw Silk',
     accent: 'Mother-of-pearl buttons'
   },
   {
     name: 'Bottoms',
-    image: 'https://picsum.photos/seed/trouser4/800/1000',
+    image: '/site-assets/real-pants.jpg',
     href: '/collection?category=Bottoms',
     count: 'Pleated Trousers',
     accent: 'Fluid high-rise drape'
