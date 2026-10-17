@@ -58,10 +58,10 @@ export function SiteHeader() {
   const cartItemCount = mounted ? cartCount : 0
 
   const getNavLinkClass = (isActive: boolean) =>
-    `text-xs font-sans uppercase tracking-[0.15em] font-medium py-1 border-b-2 transition-all duration-200 cursor-pointer inline-flex items-center ${
+    `text-xs font-sans uppercase tracking-[0.16em] font-medium py-1 transition-colors duration-200 cursor-pointer inline-flex items-center ${
       isActive
-        ? 'border-[#c9b293] text-[#c9b293]'
-        : 'border-transparent text-[#b5b0a6] hover:text-[#f4efe9] hover:border-[#f4efe9]/30'
+        ? 'text-[#f4efe9]'
+        : 'text-[#b5b0a6] hover:text-[#f4efe9]'
     }`
 
   return (
