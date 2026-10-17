@@ -58,10 +58,10 @@ export function SiteHeader() {
   const cartItemCount = mounted ? cartCount : 0
 
   const getNavLinkClass = (isActive: boolean) =>
-    `text-xs font-sans tracking-[0.16em] font-medium py-1 transition-colors duration-200 cursor-pointer inline-flex items-center ${
+    `text-xs font-sans uppercase tracking-[0.15em] font-medium py-1 border-b-2 transition-all duration-200 cursor-pointer inline-flex items-center ${
       isActive
-        ? 'text-[#f4efe9]'
-        : 'text-[#b5b0a6] hover:text-[#f4efe9]'
+        ? 'border-[#c9b293] text-[#c9b293]'
+        : 'border-transparent text-[#b5b0a6] hover:text-[#f4efe9] hover:border-[#f4efe9]/30'
     }`
 
   return (
@@ -219,7 +219,7 @@ export function SiteHeader() {
               <Link
                 href={user ? '/account' : '/login'}
                 onClick={() => setMobileMenuOpen(false)}
-                className="py-2 text-xs font-sans tracking-wider text-[#c9b293] hover:text-white border-b border-[#282622] flex items-center justify-between"
+                className="py-2 text-xs font-sans uppercase tracking-wider text-[#c9b293] hover:text-white border-b border-[#282622] flex items-center justify-between"
               >
                 <span>{user ? `Account (${user.firstName})` : 'Client Sign In / Register'}</span>
                 <UserIcon className="w-4 h-4" />
@@ -228,7 +228,7 @@ export function SiteHeader() {
               <Link
                 href="/collection"
                 onClick={() => setMobileMenuOpen(false)}
-                className={`py-2 text-xs font-sans tracking-[0.14em] font-medium border-b border-[#282622] text-left transition-colors ${
+                className={`py-2 text-xs font-sans uppercase tracking-[0.14em] font-medium border-b border-[#282622] text-left transition-colors ${
                   pathname === '/collection' ? 'text-[#c9b293]' : 'text-[#f4efe9] hover:text-[#c9b293]'
                 }`}
               >
@@ -238,7 +238,7 @@ export function SiteHeader() {
               <Link
                 href="/story"
                 onClick={() => setMobileMenuOpen(false)}
-                className={`py-2 text-xs font-sans tracking-[0.14em] font-medium border-b border-[#282622] text-left transition-colors ${
+                className={`py-2 text-xs font-sans uppercase tracking-[0.14em] font-medium border-b border-[#282622] text-left transition-colors ${
                   pathname === '/story' ? 'text-[#c9b293]' : 'text-[#f4efe9] hover:text-[#c9b293]'
                 }`}
               >
@@ -251,7 +251,7 @@ export function SiteHeader() {
                   setMobileMenuOpen(false)
                   setIsProvenanceModalOpen(true)
                 }}
-                className={`py-2 text-xs font-sans tracking-[0.14em] font-medium border-b border-[#282622] text-left transition-colors cursor-pointer ${
+                className={`py-2 text-xs font-sans uppercase tracking-[0.14em] font-medium border-b border-[#282622] text-left transition-colors cursor-pointer ${
                   isProvenanceModalOpen ? 'text-[#c9b293]' : 'text-[#f4efe9] hover:text-[#c9b293]'
                 }`}
               >
@@ -264,7 +264,7 @@ export function SiteHeader() {
                   setMobileMenuOpen(false)
                   setIsSalonModalOpen(true)
                 }}
-                className={`py-2 text-xs font-sans tracking-[0.14em] font-medium border-b border-[#282622] text-left transition-colors cursor-pointer ${
+                className={`py-2 text-xs font-sans uppercase tracking-[0.14em] font-medium border-b border-[#282622] text-left transition-colors cursor-pointer ${
                   isSalonModalOpen ? 'text-[#c9b293]' : 'text-[#f4efe9] hover:text-[#c9b293]'
                 }`}
               >
